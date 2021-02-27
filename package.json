@@ -1,21 +1,14 @@
 {
   "name": "time_to_answer",
-  "private": true,
-  "dependencies": {},
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/renatimp/time_to_answer.git"
-  },
-  "author": "",
-  "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/renatimp/time_to_answer/issues"
+  "repository": "https://github.com/renatimp/time_to_answer.git",
+  "author": "Renato Marques <renatomarques.contato@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "font-awesome": "4.6.3",
+    "jquery": "3.3.1",
+    "metismenu": "3.0.3"
   }
 }
