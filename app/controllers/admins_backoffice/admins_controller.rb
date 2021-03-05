@@ -8,8 +8,8 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def update
-    admin = Admin.find(params[:id])
-    if admin.update(params_admin)
+    @admin = Admin.find(params[:id])
+    if @admin.update(params_admin)
       redirect_to admins_backoffice_admins_path , notice: "Administrador atualizado com sucesso!"
     else
       render :edit
