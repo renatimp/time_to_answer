@@ -2,6 +2,19 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :verify_password, only: [:update]
   before_action :set_admin, only: [:edit, :update]
 
+  def new
+    @admin = Admin.new
+  end
+
+  def create
+    @admin = Admin.new(params_admin)
+    if @admin.save(params_admin)
+      redirect_to admins_backoffice_admins_path, notice: "Administrador criado com sucesso!"
+    else
+      render :new
+    end
+  end
+
   def index
     @admins = Admin.all
   end
@@ -16,6 +29,9 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
       render :edit
     end
   end
+
+
+
 
   private
   def params_admin
