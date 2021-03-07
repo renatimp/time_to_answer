@@ -1,6 +1,6 @@
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :verify_password, only: [:update]
-  before_action :set_admin, only: [:edit, :update]
+  before_action :set_admin, only: [:edit, :update, :destroy]
 
   def new
     @admin = Admin.new
@@ -8,7 +8,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
 
   def create
     @admin = Admin.new(params_admin)
-    if @admin.save(params_admin)
+    if @admin.save
       redirect_to admins_backoffice_admins_path, notice: "Administrador criado com sucesso!"
     else
       render :new
@@ -27,6 +27,15 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
       redirect_to admins_backoffice_admins_path , notice: "Administrador atualizado com sucesso!"
     else
       render :edit
+    end
+  end
+
+  def destroy
+    adm = @admin
+    if @admin.destroy
+      redirect_to admins_backoffice_admins_path, notice: "Administrador #{adm.email} foi excluído."
+    else
+      render :index
     end
   end
 
