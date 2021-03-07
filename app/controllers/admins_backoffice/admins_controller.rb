@@ -16,7 +16,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def index
-    @admins = Admin.all
+    @admins = Admin.all.page(params[:page])
   end
 
   def edit
