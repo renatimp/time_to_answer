@@ -50,7 +50,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   end
 
   def set_subject_options
-    @subject_type_options = Subject.all.pluck(:description, :id)
+    @subject_type_options = Subject.all
   end
 
 end
