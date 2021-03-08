@@ -5,8 +5,8 @@
         <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Descrição</th>
-                    <th>Assunto</th>
+                    <th><%= translate_attribute(@questions, :description) %></th>
+                    <th><%= translate_attribute(@questions, :subject) %></th>
                     <th><%= link_to "Novo", new_admins_backoffice_question_path , class: "btn btn-success" , style: "width: 60px" %></th>
 
                 </tr>

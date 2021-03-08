@@ -26,7 +26,6 @@
 
                             <div class="form-group">
                                 <%= f.label :subject_id %>
-                                <%#= f.select("subject_id", @subject_type_options, { include_blank: "Selecione..."}) %>
                                 <%= f.collection_select :subject_id, @subject_options, :id, :description , { include_blank: "Selecione..."}, { class: "form-control"} %>
                             </div>
 
