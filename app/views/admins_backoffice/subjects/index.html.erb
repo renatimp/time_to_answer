@@ -1,4 +1,5 @@
-<h1 class="page-header"><%= t('messages.listing', model: @subjects.model_name.human(count: 2)) %></h1>
+<h1 class="page-header"><%= t('messages.listing',
+   model: @subjects.model_name.human(count: 2)) %></h1>
 
 <div class="panel-body">
     <div class="table-responsive">
@@ -7,7 +8,8 @@
                 <tr>
                     <th>#</th>
                     <th><%= translate_attribute(@subjects, :description) %></th>
-                    <th><%= link_to "Novo", new_admins_backoffice_subject_path , class: "btn btn-success" , style: "width: 60px" %></th>
+                    <th><%= link_to t('button.new'), new_admins_backoffice_subject_path ,
+                       class: "btn btn-success" , style: "width: 60px" %></th>
 
                 </tr>
             </thead>
@@ -17,11 +19,22 @@
                     <td><%= subject.id%></td>
                     <td><%= subject.description%></td>
                     <td style='width: 81px;'>
-                      <%= link_to edit_admins_backoffice_subject_path(subject) , class: "btn btn-primary btn-circle" do  %>
+                      <%= link_to edit_admins_backoffice_subject_path(subject) ,
+                       class: "btn btn-primary btn-circle" do  %>
                           <i class="fa fa-edit"></i>
                       <% end -%>
-                      <%= link_to admins_backoffice_subject_path(subject), class: "btn btn-danger btn-circle", data:{confirm: t('messages.confirm_with', item: subject.description) },  method: :delete do %>
-                        <i class="fa fa-trash"></i>
+                      <% if subject.questions.blank? %>
+                        <%= link_to admins_backoffice_subject_path(subject),
+                         class: "btn btn-danger btn-circle",
+                          data:{confirm: t('messages.confirm_with', item: subject.description) },
+                            method: :delete do %>
+                          <i class="fa fa-trash"></i>
+                        <% end %>
+                      <% else %>
+                        <%= link_to '#',
+                         class: "btn btn-danger btn-circle", disabled: true do %>
+                          <i class="fa fa-trash"></i>
+                        <% end %>
                       <% end %>
                     </td>
                 </tr>

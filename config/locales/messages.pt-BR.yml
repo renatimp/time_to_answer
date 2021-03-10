@@ -4,3 +4,4 @@
     listing: Listando %{model}
     editing: Editando %{model}
     new: Novo %{model}
+    new_question: Nova %{model}

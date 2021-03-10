@@ -7,7 +7,7 @@
                 <tr>
                     <th><%= translate_attribute(@questions, :description) %></th>
                     <th><%= translate_attribute(@questions, :subject) %></th>
-                    <th><%= link_to "Novo", new_admins_backoffice_question_path , class: "btn btn-success" , style: "width: 60px" %></th>
+                    <th><%= link_to t('button.new'), new_admins_backoffice_question_path , class: "btn btn-success" , style: "width: 60px" %></th>
 
                 </tr>
             </thead>

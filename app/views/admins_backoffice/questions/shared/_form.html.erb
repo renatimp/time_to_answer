@@ -13,7 +13,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-              <%= "#{action_message} Pergunta" %>
+              <%= "#{action_message}" %>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -21,15 +21,20 @@
                         <%= form_with(model: [:admins_backoffice, @question], local: true) do |f| %>
                             <div class="form-group">
                                 <%= f.label :description %>
-                                <%= f.text_area :description , placeholder: "Informe sua pergunta" , class: "form-control" , autofocus: true, rows: 5%>
+                                <%= f.text_area :description ,
+                                 placeholder: t('placeholder.question_description'),
+                                 class: "form-control" , autofocus: true, rows: 5%>
                             </div>
 
                             <div class="form-group">
                                 <%= f.label :subject_id %>
-                                <%= f.collection_select :subject_id, @subject_options, :id, :description , { include_blank: "Selecione..."}, { class: "form-control"} %>
+                                <%= f.collection_select :subject_id, @subject_options,
+                                 :id, :description ,
+                                  { include_blank: t('placeholder.question_subject')},
+                                   { class: "form-control"} %>
                             </div>
 
-                            <%= f.submit 'Salvar', class: "btn btn-default" %>
+                            <%= f.submit t('button.save'), class: "btn btn-default" %>
                         <% end %>
                     </div>
                     <!-- /.col-lg-6 (nested) -->

@@ -1,0 +1,9 @@
+'pt-BR':
+  placeholder:
+    admin_email: Informe seu E-mail
+    admin_password: Informe sua Senha
+    admin_password_confirmation: Confirme sua Senha
+    question_description: Informe sua Pergunta...
+    question_subject: Selecione ...
+    question_subject_id: Selecione ...
+    subjects_description: Informe o assunto
