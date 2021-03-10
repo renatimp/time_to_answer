@@ -23,6 +23,9 @@
                       <%= link_to admins_backoffice_question_path(question), class: "btn btn-danger btn-circle", data:{confirm: t('messages.confirm_with', item: question.description.truncate(15))},  method: :delete do %>
                         <i class="fa fa-trash"></i>
                       <% end %>
+                      <%= link_to  admins_backoffice_question_path(question), class: "btn btn-success btn-circle" do %>
+                        <i class="fa fa-list"></i>
+                      <% end %>
                     </td>
                 </tr>
               <% end -%>

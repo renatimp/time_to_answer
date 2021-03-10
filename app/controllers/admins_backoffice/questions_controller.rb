@@ -3,6 +3,10 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   before_action :set_question, only: [:edit, :update, :destroy]
   before_action :get_subject_options, only: [:new, :create, :edit, :update]
 
+  def show
+    @question = Question.find_by(id: params[:question_id])
+  end
+
   def index
     @questions = Question.includes(:subject)
                          .order(:description)
