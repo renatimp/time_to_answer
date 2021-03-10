@@ -63,7 +63,13 @@ namespace :dev do
       rand(5..10).times do |i|
         Question.create(
           description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
-          subject: subject
+          subject: subject,
+          answers_attributes: [
+            {description: "Resposta 1", correct: false},
+            {description: "Resposta 2", correct: false},
+            {description: "Resposta 3", correct: true},
+            {description: "Resposta 4", correct: false}
+          ]
         )
       end
     end
