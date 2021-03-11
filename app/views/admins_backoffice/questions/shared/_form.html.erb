@@ -34,6 +34,15 @@
                                    { class: "form-control"} %>
                             </div>
 
+                            <div id="answers">
+                                <%= f.fields_for :answers do |answer| %>
+                                  <%= render partial: "answer_fields", locals: { f: answer} %>
+                                <% end -%>
+
+                                <%= link_to_add_association( '[Adicionar Resposta]', f, :answers) %>
+
+                            </div>
+
                             <%= f.submit t('button.save'), class: "btn btn-default" %>
                         <% end %>
                     </div>
