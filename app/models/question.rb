@@ -9,13 +9,14 @@ class Question < ApplicationRecord
 
   validates_presence_of :description
 
-  def self.search(page, term)
+  # Scopes
+  scope :_search_, -> (page, term) {
     Question.includes(:answers)
             .where("lower(description) LIKE ?", "%#{term.downcase}%")
             .page(page)
-  end
+  }
 
-  def self.last_questions(page)
+  scope :last_questions, -> (page) {
     Question.includes(:answers).order('created_at desc').page(page)
-  end
+  }
 end
