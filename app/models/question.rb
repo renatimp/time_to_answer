@@ -4,5 +4,8 @@ class Question < ApplicationRecord
   has_many :answers
   accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
 
+  # Kaminari
+  paginates_per 10
+
   validates_presence_of :description
 end
