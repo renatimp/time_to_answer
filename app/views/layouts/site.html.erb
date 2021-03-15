@@ -73,18 +73,17 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Site::Welcome#index</h1>
-        <p>Find me in app/views/site/welcome/index.html.erb</p>
+        <% unless params[:term] %>
+          <h3>Últimas perguntas cadastradas ...</h3>
+        <% else %>
+          <h3><%= "Resultatos para \"#{params[:term]}\"..." %></h3>
+        <% end %>
 
 
         <p>Links</p>
         <%= link_to 'User Backoffice', users_backoffice_welcome_index_path  %><br>
         <%= link_to 'Admin Backoffice', admins_backoffice_welcome_index_path %>
 
-
-        <p>Acessos:</p>
-        <%= user_signed_in? ? "#{current_user.email}" : "User Não esta logado" %><br>
-        <%= admin_signed_in? ? "#{current_admin.email}" : "Admin Não esta logado" %>
 
       </div>
       <%= yield %>
