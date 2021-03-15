@@ -1,0 +1,10 @@
+'pt-BR':
+  panel:
+    title: Identifique-se
+  placeholder_admin:
+    email: E-mail
+    password: Senha
+  button:
+    login: Entrar
+  checkbox:
+    remember_me: Lembrar-me
