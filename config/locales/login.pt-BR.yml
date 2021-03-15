@@ -1,7 +1,7 @@
 'pt-BR':
   panel:
     title: Identifique-se
-  placeholder_admin:
+  placeholder:
     email: E-mail
     password: Senha
   button:
