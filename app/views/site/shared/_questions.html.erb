@@ -1,16 +1,40 @@
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <% unless params[:term] %>
+    <i><h3>Últimas perguntas cadastradas ...</h3></i>
+  <% else %>
+    <i><h3><%= "Resultatos para \"#{params[:term]}\"..." %></h3></i>
+  <% end %>
+  <p>Links</p>
+  <%= link_to 'User Backoffice', users_backoffice_welcome_index_path  %><br>
+  <%= link_to 'Admin Backoffice', admins_backoffice_welcome_index_path %>
+</div>
+
 <% @questions.each do |question|%>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= question.description %></h3>
+  <%= form_with url: site_answer_path, local: true do |form|  %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= question.description %></h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% question.answers.each do |answer| %>
+            <li style="list-style:none;">
+              <div class="radio">
+                <label>
+                  <%= radio_button_tag 'answer', answer.id %>
+                  <%= answer.description %>
+                </label>
+              </div>
+            </li>
+          <% end %>
+          <li style="list-style:none;">
+            <%= form.submit "Responder", class: "btn btn-default" %>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="panel-body">
-      <ul>
-        <% question.answers.each do |answer| %>
-          <li><%= answer.description %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+  <% end %>
 <% end %>
 
 <div class="text-center">

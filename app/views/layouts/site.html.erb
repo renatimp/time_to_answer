@@ -71,21 +71,7 @@
         </div><!--/.container-fluid -->
       </nav>
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <% unless params[:term] %>
-          <h3>Últimas perguntas cadastradas ...</h3>
-        <% else %>
-          <h3><%= "Resultatos para \"#{params[:term]}\"..." %></h3>
-        <% end %>
 
-
-        <p>Links</p>
-        <%= link_to 'User Backoffice', users_backoffice_welcome_index_path  %><br>
-        <%= link_to 'Admin Backoffice', admins_backoffice_welcome_index_path %>
-
-
-      </div>
       <%= yield %>
 
     </div> <!-- /container -->
