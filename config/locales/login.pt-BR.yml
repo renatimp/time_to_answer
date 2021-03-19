@@ -1,10 +1,13 @@
 'pt-BR':
   panel:
-    title: Identifique-se
-  placeholder:
+    sign_in: Identifique-se
+    sign_up: Cadastrar-se
+  fields:
     email: E-mail
     password: Senha
+    password_confirmation: Confirme sua Senha
   button:
-    login: Entrar
+    sign_in: Entrar
+    sign_up: Cadastrar
   checkbox:
     remember_me: Lembrar-me
