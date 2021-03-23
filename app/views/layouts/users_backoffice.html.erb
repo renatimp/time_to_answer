@@ -204,6 +204,12 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'users_backoffice' %>
 
+    <%= javascript_tag do %>
+      $(function() {
+        $('.datepicker').datepicker();
+      });
+    <% end %>
+
     <% if notice %>
       <%= javascript_tag do %>
           $.bootstrapGrowl('<%= notice %>', {
