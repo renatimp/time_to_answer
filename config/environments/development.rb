@@ -6,6 +6,17 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # MailTrap config
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '87371b973464cd',
+    :password => '8e2719d4651627',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
+
   # Devise config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 

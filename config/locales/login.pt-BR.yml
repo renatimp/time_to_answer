@@ -2,6 +2,8 @@
   panel:
     sign_in: Identifique-se
     sign_up: Cadastrar-se
+    forgot_password: Esqueceu a senha?
+    change_password: Altere sua Senha
   fields:
     email: E-mail
     password: Senha
@@ -9,5 +11,7 @@
   button:
     sign_in: Entrar
     sign_up: Cadastrar
+    forgot_password: Enviar instruções
+    change_password: Alterar Senha
   checkbox:
     remember_me: Lembrar-me
