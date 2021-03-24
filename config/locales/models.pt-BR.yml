@@ -49,3 +49,6 @@
         subject_id: Assunto
         created_at: Criado em
         updated_at: Atualizado em
+      answer:
+        description: Descrição
+        correct?: Correta

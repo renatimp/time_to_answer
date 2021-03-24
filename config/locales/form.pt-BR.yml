@@ -13,5 +13,15 @@
     sign_up: Cadastrar
     forgot_password: Enviar instruções
     change_password: Alterar Senha
+    save: Salvar
+    new: Novo
   checkbox:
     remember_me: Lembrar-me
+  placeholder:
+    email: Informe seu E-mail
+    password: Informe sua Senha
+    password_confirmation: Confirme sua Senha
+    question_description: Informe sua Pergunta...
+    question_subject: Selecione ...
+    question_subject_id: Selecione ...
+    subjects_description: Informe o assunto
