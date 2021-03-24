@@ -22,7 +22,9 @@
         <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <%= link_to site_welcome_index_path , class:"site_title" do %>
+                <i class="fa fa-paw"></i> <span>Gentelella Alela!</span>
+              <% end %>
             </div>
 
             <div class="clearfix"></div>
@@ -74,9 +76,9 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <%= link_to destroy_user_session_path, "data-toggle":"tooltip", "data-placement":"top", title: "Log_out" ,method: :delete do %>
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
+              <% end %>
             </div>
             <!-- /menu footer buttons -->
           </div>
