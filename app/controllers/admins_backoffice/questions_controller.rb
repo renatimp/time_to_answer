@@ -21,6 +21,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   def create
     @question = Question.new(params_question)
     if @question.save
+      #QuestionMailer.create_question(current_admin, @question).deliver_now
       redirect_to admins_backoffice_questions_path, notice: "Pergunta cadastrada com sucesso!"
     else
       render :new

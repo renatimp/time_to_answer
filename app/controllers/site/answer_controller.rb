@@ -4,6 +4,4 @@ class Site::AnswerController < SiteController
     UserStatistic.set_statistic(@answer, current_user)
   end
 
-  private
-
 end
