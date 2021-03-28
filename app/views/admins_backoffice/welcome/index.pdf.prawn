@@ -7,7 +7,7 @@ prawn_document do |pdf|
   pdf.table @users.collect{|u| u.user_profile.blank? ?
                            [u.id, u.full_name , u.email, '', ''] :
                            [u.id, u.full_name, u.email, u.user_profile.gender,
-                            l(u.user_profile.birthdate)]},
+                            l(u.user_profile.birthdate), u.user_profile.address]},
                             :position => :center,
                             :width => 550,
                             :row_colors =>["d3d3d3","ffffff"],
